@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>AI Reality Check — KERNLIJN</title>
+  <title>AI Reality Check — Polestar Company</title>
   <meta name="description" content="De AI Reality Check geeft je in 5 minuten een eerlijk beeld van waar jouw organisatie staat met AI. Voor directeuren en MT-leden in mkb en mid-market.">
-  <meta property="og:title" content="AI Reality Check — KERNLIJN">
+  <meta property="og:title" content="AI Reality Check — Polestar Company">
   <meta property="og:description" content="5 minuten. 12 stellingen. Direct inzicht in de AI-positie van jouw organisatie.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -70,8 +70,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 24px; border-bottom: 1px solid var(--line);
     }
-    .logo { font-size: 18px; font-weight: 900; color: var(--blue); letter-spacing: -.5px; }
-    .logo span { color: var(--blue-mid); }
+    .logo img { height: 36px; width: auto; display: block; }
     .nav-tag { font-size: 13px; color: var(--muted); display: none; }
     @media(min-width:540px){ .nav-tag { display: block; } }
 
@@ -151,6 +150,8 @@
       border-bottom: 1px solid var(--line);
     }
     .scan-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .scan-logo img { height: 28px; width: auto; display: block; }
+    .scan-meta-right { display: flex; gap: 12px; align-items: center; }
     .scan-counter { font-size: 13px; font-weight: 700; color: var(--blue); }
     .scan-time    { font-size: 13px; color: var(--muted); }
     .prog-track   { height: 3px; background: var(--line); border-radius: 100px; overflow: hidden; margin-bottom: 12px; }
@@ -250,7 +251,8 @@
       padding: 32px 24px 28px; text-align: center;
       background: var(--blue);
     }
-    .res-brand { font-size: 13px; color: rgba(255,255,255,.5); margin-bottom: 16px; font-weight: 600; letter-spacing: .3px; }
+    .res-brand { margin-bottom: 16px; }
+    .res-brand img { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; }
     .res-num   {
       display: inline-block; padding: 5px 16px; border-radius: 100px;
       background: rgba(255,255,255,.18); color: var(--white);
@@ -420,7 +422,7 @@
 <div id="screen-landing" class="screen active">
 
   <nav class="l-nav">
-    <div class="logo">KERN<span>LIJN</span></div>
+    <div class="logo"><img src="logo.svg" alt="Polestar Company"></div>
     <div class="nav-tag">AI Reality Check</div>
   </nav>
 
@@ -528,7 +530,7 @@
   </section>
 
   <footer class="l-footer">
-    <p>© 2025 KERNLIJN &nbsp;·&nbsp; <a href="mailto:contact@kernlijn.nl">contact@kernlijn.nl</a> &nbsp;·&nbsp; Gebaseerd op gesprekken met meer dan 100 mkb-directeuren</p>
+    <p>© 2025 Polestar Company &nbsp;·&nbsp; <a href="mailto:arnout.dijkstal@polestarcompany.nl">arnout.dijkstal@polestarcompany.nl</a> &nbsp;·&nbsp; Gebaseerd op gesprekken met meer dan 100 mkb-directeuren</p>
   </footer>
 
 </div>
@@ -541,8 +543,11 @@
 
   <div class="scan-top">
     <div class="scan-meta">
-      <span class="scan-counter" id="scan-counter">Vraag 1 van 12</span>
-      <span class="scan-time"    id="scan-time">nog ca. 5 min</span>
+      <div class="scan-logo"><img src="logo.svg" alt="Polestar Company"></div>
+      <div class="scan-meta-right">
+        <span class="scan-counter" id="scan-counter">Vraag 1 van 12</span>
+        <span class="scan-time"    id="scan-time">nog ca. 5 min</span>
+      </div>
     </div>
     <div class="prog-track">
       <div class="prog-fill" id="prog-fill" style="width:0%"></div>
@@ -584,7 +589,7 @@
 <div id="screen-result" class="screen">
 
   <div class="res-head" id="res-head">
-    <div class="res-brand">AI Reality Check &nbsp;·&nbsp; KERNLIJN</div>
+    <div class="res-brand"><img src="logo.svg" alt="Polestar Company"></div>
     <div class="res-num" id="res-num">Profiel 4 van 5</div>
     <h2 id="res-name">De startklare organisatie</h2>
     <div class="res-head-sub" id="res-head-sub"></div>
@@ -623,7 +628,7 @@
     </div>
 
     <div class="res-step">
-      <div class="lbl">Jouw concrete vervolgstap</div>
+      <div class="lbl">Concrete vervolgstap</div>
       <p id="res-step"></p>
     </div>
 
@@ -635,7 +640,7 @@
     <div class="res-cta">
       <h3>Wil je weten wat dit betekent voor jouw organisatie?</h3>
       <p>In 20 minuten geven we je een persoonlijke toelichting op jouw profiel en de concrete volgende stap.</p>
-      <a id="cta-call" class="btn-call" href="mailto:contact@kernlijn.nl">
+      <a id="cta-call" class="btn-call" href="mailto:arnout.dijkstal@polestarcompany.nl">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         Plan een gratis interpretatiecall van 20 minuten
       </a>
@@ -666,7 +671,7 @@
   </div>
 
   <div class="res-footer">
-    <p>Gebaseerd op gesprekken met meer dan 100 mkb-directeuren &nbsp;·&nbsp; KERNLIJN</p>
+    <p>Gebaseerd op gesprekken met meer dan 100 mkb-directeuren &nbsp;·&nbsp; Polestar Company</p>
     <button class="btn-redo" onclick="restart()">Scan opnieuw doen</button>
   </div>
 
@@ -790,77 +795,77 @@ const PROFILES = [
   {
     id: 1, name: "De afwachtende organisatie", range: "1.0 tot 2.0",
     color: "#475569",
-    kernzin: "AI staat niet op jouw agenda. En dat is een keuze met gevolgen.",
-    duiding: "Jouw organisatie beschouwt AI als iets voor later, voor anderen, of voor bedrijven met meer middelen. De urgentie wordt niet gevoeld of bewust op afstand gehouden. Dat is begrijpelijk, maar het is geen neutrale positie: terwijl jij wacht, bepalen concurrenten, klanten en leveranciers al het tempo.",
+    kernzin: "AI staat niet op jouw agenda, en dat is een keuze met consequenties.",
+    duiding: "In jouw organisatie wordt AI gezien als iets voor later, voor anderen, of voor bedrijven met meer middelen. De urgentie wordt niet gevoeld of bewust op afstand gehouden. Dat is begrijpelijk, maar het is geen neutrale positie: terwijl jij wacht, bepalen concurrenten, klanten en leveranciers al het tempo.",
     signalen: [
-      "Er is rust en focus. Geen energie verspild aan hypes of ondoordachte pilots.",
-      "Er is nog ruimte om een bewuste, gefundeerde eerste stap te zetten.",
+      "Er is rust en focus, geen energie verspild aan hypes of ondoordachte pilots.",
+      "Er is ruimte om een bewuste, gefundeerde eerste stap te zetten zonder achterstanden in te halen.",
     ],
     blokkades: [
-      "Urgentiebesef ontbreekt. Daardoor verdringt AI andere prioriteiten nooit.",
-      "Zonder interne beweging groeit de afstand tot concurrenten die al experimenteren.",
+      "Gebrek aan urgentiebesef maakt het moeilijk prioriteit te geven aan AI: het verdringt andere agenda's nooit.",
+      "Zonder interne beweging groeit de afstand tot concurrenten die al experimenteren en leren.",
     ],
-    stap: "Plan binnen vier weken een MT-gesprek over drie concrete AI-toepassingen in jouw sector. Niet om te besluiten, maar om te voelen of de urgentie klopt.",
+    stap: "Plan binnen vier weken een intern gesprek op directieniveau over drie concrete sectortoepassingen van AI. Niet om te besluiten, maar om te voelen of de urgentie klopt.",
   },
   {
     id: 2, name: "De verkennende organisatie", range: "2.1 tot 2.8",
     color: "#2471A3",
-    kernzin: "Je praat over AI, maar je beweegt er nog niet op.",
-    duiding: "Er is interesse. Gesprekken worden gevoerd, artikelen worden gelezen, misschien is er een pilot overwogen. Maar het blijft bij verkennen. Er is geen richting, geen eigenaar, geen commitment. Het gevaar van dit profiel: verkennend blijven voelt productief, maar levert geen voordeel op zolang er geen keuzes worden gemaakt.",
+    kernzin: "Je bent je bewust van AI, maar handelt er nog niet naar.",
+    duiding: "Er is interesse. Gesprekken worden gevoerd, artikelen worden gelezen, misschien is er al een pilot overwogen. Maar het blijft bij verkennen. Er is geen richting, geen eigenaar, geen commitment. Het gevaar van dit profiel: verkennend blijven voelt productief, maar levert geen voordeel op zolang er geen keuzes worden gemaakt.",
     signalen: [
       "Er is bewustzijn van AI en de potentiële relevantie voor de organisatie.",
-      "Er is bereidheid tot gesprek. De weerstand is niet fundamenteel.",
+      "Er is bereidheid tot gesprek, de weerstand is niet fundamenteel.",
     ],
     blokkades: [
       "Ontbrekende richting zorgt ervoor dat verkenning nooit omslaat in actie.",
       "Zonder eigenaarschap blijft AI een gespreksonderwerp in plaats van een strategisch thema.",
     ],
-    stap: "Benoem binnen één maand één trekker voor AI in je MT. Niet een projectleider, maar een directielid dat persoonlijk verantwoordelijk is voor de volgende concrete stap.",
+    stap: "Benoem één eigenaar voor AI in je MT: niet een projectleider, maar een directielid dat verantwoordelijk is voor de volgende concrete stap.",
   },
   {
     id: 3, name: "De enthousiaste organisatie", range: "2.9 tot 3.5",
     color: "#B45309",
     kernzin: "De energie is er. De fundering nog niet.",
-    duiding: "Jouw organisatie heeft enthousiasme voor AI. Pilots worden gestart, tools uitgeprobeerd, medewerkers experimenteren. Maar er is geen samenhang: eigenaarschap is diffuus, de data- en governance-basis wankelt en successen worden niet opgeschaald. Enthousiasme is geen strategie. Zonder structuur leidt het tot versnippering.",
+    duiding: "In jouw organisatie heerst enthousiasme over AI. Pilots worden gestart, tools worden uitgeprobeerd, medewerkers experimenteren. Maar er is geen samenhang: eigenaarschap is diffuus, de data- en governance-basis wankelt en successen worden niet opgeschaald. Enthousiasme is geen strategie: zonder structuur leidt het tot versnippering.",
     signalen: [
-      "Er is beweging en experimenteerdrang. De organisatie staat niet stil.",
+      "Er is beweging en experimenteerdrang, de organisatie staat niet stil.",
       "Er zijn al eerste ervaringen en lessen opgedaan met AI-toepassingen.",
     ],
     blokkades: [
       "Gebrek aan governance en datareadiness zorgt dat pilots stranden of niet schaalbaar zijn.",
       "Onduidelijk eigenaarschap leidt tot concurrerende initiatieven en verlies van focus.",
     ],
-    stap: "Inventariseer alle lopende AI-initiatieven en selecteer er één om te verdiepen: met heldere doelen, een eigenaar en een beheerskader. Doe dit in de komende zes weken.",
+    stap: "Inventariseer alle lopende AI-initiatieven en selecteer er één om te verdiepen en structureren, met heldere doelen, een eigenaar en een beheerskader. Doe dat in de komende zes weken.",
   },
   {
     id: 4, name: "De startklare organisatie", range: "3.6 tot 4.2",
     color: "#166534",
-    kernzin: "De basis staat. Nu is het zaak om te kiezen en vaart te maken.",
-    duiding: "Jouw organisatie heeft richting, draagvlak en eerste toepassingen. De randvoorwaarden zijn grotendeels op orde. De volgende uitdaging is niet méér starten, maar slimmer sturen: prioriteren, opschalen en waarde aantoonbaar maken. Startklaar is niet hetzelfde als snel. Dat onderscheid maakt nu het verschil.",
+    kernzin: "De basis staat. Nu is het zaak om te kiezen en te versnellen.",
+    duiding: "Jouw organisatie heeft richting, draagvlak en eerste toepassingen. De randvoorwaarden zijn grotendeels op orde. De volgende uitdaging is niet méér starten, maar slimmer sturen: prioriteren, opschalen en waarde aantoonbaar maken. Startklaar is niet hetzelfde als snel, dat onderscheid maakt nu het verschil.",
     signalen: [
       "Er is strategische richting en duidelijk eigenaarschap voor AI.",
-      "Eerste toepassingen draaien. De organisatie heeft praktijkervaring opgebouwd.",
+      "Eerste toepassingen draaien en de organisatie heeft praktijkervaring opgebouwd.",
     ],
     blokkades: [
       "Risico op versnippering als te veel initiatieven gelijktijdig worden opgestart zonder centrale sturing.",
       "Opschaling stagneert vaak door onvoldoende aansluiting op datainfrastructuur of beheersprocessen.",
     ],
-    stap: "Stel een AI-roadmap op voor de komende twaalf maanden: twee tot drie prioritaire toepassingen met doelen, eigenaren en meetpunten.",
+    stap: "Stel een AI-roadmap op voor de komende twaalf maanden: twee tot drie prioritaire toepassingen met doelen, eigenaren, meetpunten en een helder beeld van de benodigde randvoorwaarden.",
   },
   {
     id: 5, name: "De versnellende organisatie", range: "4.3 tot 5.0",
     color: "#5B21B6",
     kernzin: "AI levert al waarde. De vraag is nu hoe je het voordeel structureel vergroot.",
-    duiding: "Jouw organisatie gebruikt AI bewust, gemeten en schaalbaar. Er is een cultuur van leren en bijsturen. De basis is sterk: governance, data en vaardigheden zijn op orde. De uitdaging verschuift van implementatie naar concurrentievoordeel. Hoe differentieer je structureel op basis van AI-volwassenheid?",
+    duiding: "Jouw organisatie gebruikt AI bewust, gemeten en schaalbaar. Er is een cultuur van leren en bijsturen. De basis is sterk: governance, data en vaardigheden zijn op orde. De uitdaging verschuift van implementatie naar concurrentievoordeel: hoe differentieër je structureel op basis van AI-volwassenheid?",
     signalen: [
       "AI is ingebed in werkprocessen en levert aantoonbaar meetbare waarde.",
       "De organisatie heeft een lerend vermogen ontwikkeld: experimenteren, meten, opschalen.",
     ],
     blokkades: [
-      "Op dit niveau wordt zelfgenoegzaamheid de grootste vijand. De markt staat niet stil.",
+      "Op dit niveau wordt complacency de grootste vijand, de markt staat niet stil.",
       "Talentontwikkeling en externe samenwerking worden kritischer naarmate AI complexer en strategischer wordt.",
     ],
-    stap: "Definieer binnen het komende kwartaal welke AI-capabilities voor jullie een strategisch onderscheidend vermogen kunnen worden. Investeer gericht in die specifieke competenties.",
+    stap: "Definieer binnen kwartaal twee welke AI-capabilities voor jullie een strategisch onderscheidend vermogen kunnen worden, en investeer gericht in die specifieke competenties.",
   },
 ];
 
@@ -1022,7 +1027,7 @@ function render() {
   document.getElementById('scan-time').textContent = qi >= 11 ? 'bijna klaar' : `nog ca. ${minsLeft} min`;
   document.getElementById('prog-fill').style.width = `${(qi / 12) * 100}%`;
 
-  document.getElementById('dim-badge').textContent = `Dimensie ${q.d}  —  ${q.dName}`;
+  document.getElementById('dim-badge').textContent = `Dimensie ${q.d}: ${q.dName}`;
   document.getElementById('q-text').innerHTML = `<span class="q-quote">"${q.text}"</span>`;
 
   const list = document.getElementById('ans-list');
@@ -1138,7 +1143,7 @@ function showResult() {
   const body = encodeURIComponent(
     `Hallo,\n\nIk heb de AI Reality Check ingevuld.\n\nMijn profiel: ${p.name}\nScore: ${result.total.toFixed(2)}\n\nIk wil graag een interpretatiecall plannen.\n\nMet vriendelijke groet,`
   );
-  document.getElementById('cta-call').href = `mailto:contact@kernlijn.nl?subject=${subj}&body=${body}`;
+  document.getElementById('cta-call').href = `mailto:arnout.dijkstal@polestarcompany.nl?subject=${subj}&body=${body}`;
 
   show('screen-result');
 
@@ -1166,7 +1171,7 @@ function submitLead() {
     `Profiel: ${p.name}\nScore: ${result.total.toFixed(2)}\n\n` +
     `Dimensiescores:\n${DIM_LABELS.map((l,i) => `- ${l}: ${result.dims[i].toFixed(1)}`).join('\n')}`
   );
-  window.location.href = `mailto:contact@kernlijn.nl?subject=${s}&body=${b}`;
+  window.location.href = `mailto:arnout.dijkstal@polestarcompany.nl?subject=${s}&body=${b}`;
   closeModal();
   toast('Bedankt! Je ontvangt je inzichten per e-mail.');
 }
@@ -1178,7 +1183,7 @@ function shareLI() {
   const p   = result.profile;
   const url = encodeURIComponent(window.location.href);
   const txt = encodeURIComponent(
-    `Ik deed de AI Reality Check van KERNLIJN. Mijn profiel: "${p.name}"\n\n"${p.kernzin}"\n\nBen jij benieuwd waar jouw organisatie staat?`
+    `Ik deed de AI Reality Check van Polestar Company. Mijn profiel: "${p.name}"\n\n"${p.kernzin}"\n\nBen jij benieuwd waar jouw organisatie staat?`
   );
   window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&summary=${txt}`, '_blank');
 }
