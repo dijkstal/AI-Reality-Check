@@ -93,6 +93,8 @@
       font-size: 18px; color: var(--muted); margin-bottom: 36px;
       max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.65;
     }
+    .l-hero .sub p { margin-bottom: 14px; }
+    .l-hero .sub p:last-child { margin-bottom: 0; }
     .hero-cta { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 48px; }
     .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
     .hero-meta-item { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--muted); }
@@ -432,7 +434,11 @@
 
     <h1>Weet jij <em>echt</em> waar jouw organisatie staat met AI?</h1>
 
-    <p class="sub">De AI Readiness Scan geeft je in 10 minuten een eerlijk beeld. Geen hype, geen consultantentaal. Gewoon weten waar je staat en wat de volgende stap is.</p>
+    <div class="sub">
+      <p>Organisaties die zelf geen AI strategie hebben, krijgen er toch mee te maken. Via medewerkers, leveranciers, wetgeving, klanten, softwarepakketten, marketingtools, pilots of chatbots.</p>
+      <p>De vraag is niet of AI gebruikt wordt. De vraag is of de organisatie weet waar, waarvoor, met welke data en onder welke regels.</p>
+      <p>De AI Readiness Scan geeft je in 10 minuten een eerlijk beeld van waar jouw organisatie staat met AI.</p>
+    </div>
 
     <div class="hero-cta">
       <button class="btn btn-primary" onclick="startScan()" style="font-size:17px;padding:17px 32px;">
@@ -807,7 +813,7 @@ const PROFILES = [
     id: 2, name: "De Zoekende Organisatie", range: "2.1 tot 2.8",
     color: "#2471A3",
     kernzin: "Interesse zonder richting. Oriëntatie kost niks, maar is ook geen strategie.",
-    duiding: "Er is interesse. AI staat op de agenda, er wordt over gesproken, maar het blijft bij verkennen. Er is geen richting, geen eigenaar, geen commitment. Het gevaar hiervan is dat het voelt alsof er iets gebeurt. Maar verkennen zonder besluiten kost veel energie, maar je komt niet echt vooruit. Terwijl de concurrent al leert wat jij nog aan het overwegen bent.",
+    duiding: "Er is interesse. AI staat op de agenda, er wordt over gesproken, maar het blijft bij verkennen. Er is geen richting, geen eigenaar, geen commitment. Het gevaar hiervan is dat het voelt alsof er iets gebeurt. Verkennen zonder besluiten kost veel energie, maar je komt niet echt vooruit. Terwijl de concurrent al leert wat jij nog aan het overwegen bent.",
     signalen: [
       "Er is bewustzijn van AI en de potentiële relevantie voor de organisatie.",
       "Er is bereidheid tot gesprek, de weerstand is niet fundamenteel.",
@@ -1006,7 +1012,7 @@ function startScan() {
   qi = 0;
   answers = Array(12).fill(null);
   show('screen-scan');
-  render();
+  showDimOverlay(1);
 }
 
 function restart() { show('screen-landing'); }
