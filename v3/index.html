@@ -31,11 +31,11 @@
       --ease:       0.22s ease;
 
       /* profile zone colours */
-      --c1: #64748B;
-      --c2: #2E75B6;
-      --c3: #D97706;
-      --c4: #16A34A;
-      --c5: #7C3AED;
+      --c1: #EF4444;
+      --c2: #F59E0B;
+      --c3: #EAB308;
+      --c4: #4ADE80;
+      --c5: #16A34A;
     }
 
     html { scroll-behavior: smooth; }
@@ -632,7 +632,7 @@
     <div class="res-duiding" id="res-duiding"></div>
 
     <div class="res-sec">
-      <div class="res-sec-lbl">Momentum</div>
+      <div class="res-sec-lbl">Positieve Signalen</div>
       <ul class="res-list sig-list"  id="res-sig"></ul>
     </div>
 
@@ -827,7 +827,7 @@ const DIM_DESCS = [
 const PROFILES = [
   {
     id: 1, name: "De Blinde Organisatie", range: "1.0 tot 2.0",
-    color: "#475569",
+    color: "#DC2626",
     kernzin: "AI staat niet op de agenda. Geen prioriteit, geen regie, wel risico.",
     duiding: "In jouw organisatie geldt AI nog als iets voor later. Of voor grotere bedrijven. Voor als er meer budget is, meer tijd, meer duidelijkheid. Die redenering voelt verstandig. Dat is het niet. Afwachten is geen neutrale positie. Elke maand dat AI buiten de deur wordt gehouden, nemen concurrenten besluiten sneller, verwerken leveranciers data efficiënter en stellen klanten hogere verwachtingen. De lat verschuift, ook als jij stilstaat. AI is al relevant voor jouw organisatie, dus hoeveel achterstand kun je je permitteren?",
     signalen: [
@@ -842,7 +842,7 @@ const PROFILES = [
   },
   {
     id: 2, name: "De Zoekende Organisatie", range: "2.1 tot 2.8",
-    color: "#2471A3",
+    color: "#B45309",
     kernzin: "Interesse zonder richting. Oriëntatie kost niks, maar is ook geen strategie.",
     duiding: "Er is interesse. AI staat op de agenda, er wordt over gesproken, maar het blijft bij verkennen. Er is geen richting, geen eigenaar, geen commitment. Het gevaar hiervan is dat het voelt alsof er iets gebeurt. Verkennen zonder besluiten kost veel energie, maar je komt niet echt vooruit. Terwijl de concurrent al leert wat jij nog aan het overwegen bent.",
     signalen: [
@@ -857,7 +857,7 @@ const PROFILES = [
   },
   {
     id: 3, name: "De Verkennende Organisatie", range: "2.9 tot 3.5",
-    color: "#B45309",
+    color: "#854D0E",
     kernzin: "Er is nieuwsgierigheid en ambitie, maar de fundering en richting ontbreken.",
     duiding: "In jouw organisatie is er overwegend enthousiasme over AI. De kansen worden gezien, tools worden uitgeprobeerd, medewerkers experimenteren. Maar de basis en een consistente aanpak ontbreken: verantwoordelijkheid is niet belegd. Regelgeving is nog onbekend terrein. Data en governance staan niet. Successen kunnen niet opschalen. Enthousiasme is de vonk. Structuur kan het daadwerkelijk laten branden.",
     signalen: [
@@ -872,7 +872,7 @@ const PROFILES = [
   },
   {
     id: 4, name: "De Startklare Organisatie", range: "3.6 tot 4.2",
-    color: "#166534",
+    color: "#16A34A",
     kernzin: "De basis staat. Richting en bereidheid zijn aanwezig. Dit is het startpunt, nu doorpakken.",
     duiding: "Jouw organisatie heeft een richting, enig draagvlak en enkele vroege toepassingen voor AI. Belangrijke randvoorwaarden zijn al op orde. De volgende uitdaging is slimmer sturen: prioriteiten stellen, de fundering afmaken en dan opschalen en waarde aantoonbaar maken. Startklaar is niet hetzelfde als snel, dat onderscheid maakt nu het verschil.",
     signalen: [
@@ -887,7 +887,7 @@ const PROFILES = [
   },
   {
     id: 5, name: "De Versnellende Organisatie", range: "4.3 tot 5.0",
-    color: "#5B21B6",
+    color: "#15803D",
     kernzin: "AI levert waarde. Er is structuur nodig om succesvol te kunnen opschalen en doorgroeien.",
     duiding: "Jouw organisatie past AI gedisciplineerd toe, gemeten en schaalbaar. De basis staat: governance, data en vaardigheden zijn op orde. Er wordt geleerd en bijgestuurd. De fase van experimenteren is voorbij. De volgende vraag is harder: hoe zet je AI-readiness om in een concurrentievoordeel dat moeilijk te kopiëren is? Want de organisaties die nu nog achterlopen, halen in. Tooling wordt toegankelijker, kennis verspreidt zich snel, drempels worden lager. Wat vandaag onderscheidend is, is morgen standaard. Structurele differentiatie ontstaat door sneller te leren en dieper te integreren.",
     signalen: [
@@ -916,13 +916,31 @@ function gaugeXY(score, radius) {
 function f2(n) { return n.toFixed(2); }
 
 function buildGaugeSVG() {
-  const SEGS = [
-    [1.0, 2.0, '#64748B'],
-    [2.0, 2.8, '#2E75B6'],
-    [2.8, 3.5, '#D97706'],
-    [3.5, 4.2, '#16A34A'],
-    [4.2, 5.0, '#7C3AED'],
+  // Color stops at equal segment boundaries [1.0, 1.8, 2.6, 3.4, 4.2, 5.0]
+  // Blind=Red, Zoekend=Amber, Verkennend=Yellow, Startklaar=LightGreen, Versnellend=Green
+  const COLOR_STOPS = [
+    [1.0, [239, 68,  68]],   // #EF4444 Rood
+    [1.8, [245, 158, 11]],   // #F59E0B Amber
+    [2.6, [234, 179, 8]],    // #EAB308 Geel
+    [3.4, [74,  222, 128]],  // #4ADE80 Lichtgroen
+    [4.2, [22,  163, 74]],   // #16A34A Groen
+    [5.0, [22,  163, 74]],   // #16A34A Groen (einde)
   ];
+
+  function lerpColor(score) {
+    for (let i = 0; i < COLOR_STOPS.length - 1; i++) {
+      const [s0, c0] = COLOR_STOPS[i];
+      const [s1, c1] = COLOR_STOPS[i + 1];
+      if (score >= s0 && score <= s1 + 0.001) {
+        const t = Math.min(1, (score - s0) / (s1 - s0));
+        const r = Math.round(c0[0] + t * (c1[0] - c0[0]));
+        const g = Math.round(c0[1] + t * (c1[1] - c0[1]));
+        const b = Math.round(c0[2] + t * (c1[2] - c0[2]));
+        return `rgb(${r},${g},${b})`;
+      }
+    }
+    return '#16A34A';
+  }
 
   let s = `<svg id="gsv" viewBox="0 0 340 205" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">`;
 
@@ -931,8 +949,14 @@ function buildGaugeSVG() {
   s += `<path d="M${f2(lx)},${f2(ly)} A${GR},${GR} 0 0,1 ${f2(rx)},${f2(ry)}"
              fill="none" stroke="#E2E8F0" stroke-width="${GSW+6}" stroke-linecap="round"/>`;
 
-  // Colored profile-zone segments
-  for (const [from, to, color] of SEGS) {
+  // Smooth gradient: 60 thin arc segments with interpolated colours
+  const N = 60;
+  const step = 4.0 / N; // total range 1.0–5.0 = 4.0
+  for (let i = 0; i < N; i++) {
+    const from = 1.0 + i * step;
+    const to   = from + step;
+    const mid  = (from + to) / 2;
+    const color = lerpColor(mid);
     const [sx,sy] = gaugeXY(from), [ex,ey] = gaugeXY(to);
     s += `<path d="M${f2(sx)},${f2(sy)} A${GR},${GR} 0 0,1 ${f2(ex)},${f2(ey)}"
                fill="none" stroke="${color}" stroke-width="${GSW}" stroke-linecap="butt"/>`;
@@ -947,8 +971,8 @@ function buildGaugeSVG() {
   s += `<circle cx="${GCX}" cy="${GCY}" r="11" fill="#0F1923"/>`;
   s += `<circle cx="${GCX}" cy="${GCY}" r="5"  fill="#FFFFFF"/>`;
 
-  // Tick marks at each segment boundary
-  const ticks = [1.0, 2.0, 2.8, 3.5, 4.2, 5.0];
+  // Tick marks at equal segment boundaries [1.0, 1.8, 2.6, 3.4, 4.2, 5.0]
+  const ticks = [1.0, 1.8, 2.6, 3.4, 4.2, 5.0];
   for (const ts of ticks) {
     const [tx,ty] = gaugeXY(ts, GR + GSW/2 + 6);
     const [tx2,ty2] = gaugeXY(ts, GR + GSW/2 + 12);
