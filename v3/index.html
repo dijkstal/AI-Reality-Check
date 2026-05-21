@@ -243,6 +243,13 @@
       font-size: 16px; font-weight: 700; cursor: pointer; transition: var(--ease);
     }
     .btn-ov-cont:hover { background: var(--blue-light); }
+    .btn-ov-back {
+      background: transparent; color: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.25);
+      padding: 10px 24px; border-radius: var(--r);
+      font-size: 14px; font-weight: 600; cursor: pointer; transition: var(--ease); margin-top: 12px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .btn-ov-back:hover { color: var(--white); border-color: rgba(255,255,255,.6); }
 
     /* ════════════════════════════════════
        RESULT
@@ -572,7 +579,7 @@
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
       </button>
     </div>
-    <div class="kbd-hint">Tip: druk op 1 t/m 5 om direct te antwoorden &nbsp;·&nbsp; Enter om door te gaan</div>
+    <div class="kbd-hint">Tip: druk op 1 t/m 5 om direct te antwoorden</div>
   </div>
 
 </div>
@@ -580,10 +587,14 @@
 <!-- Dimension transition overlay -->
 <div class="dim-overlay" id="dim-overlay">
   <div class="dim-ov-num"  id="ov-num">2</div>
-  <div class="dim-ov-tag">Volgende dimensie</div>
+
   <div class="dim-ov-name" id="ov-name"></div>
   <div class="dim-ov-desc" id="ov-desc"></div>
   <button class="btn-ov-cont" onclick="hideOverlay()">Verder</button>
+  <button class="btn-ov-back" onclick="backFromOverlay()">
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    Terug
+  </button>
 </div>
 
 
@@ -602,7 +613,7 @@
 
     <!-- Gauge visual -->
     <div class="gauge-wrap">
-      <div class="gauge-title">Jouw AI-positiescore</div>
+      <div class="gauge-title">Jouw AI-Profielscore</div>
       <div id="gauge-svg-host"></div>
       <div class="gauge-score-row">
         <span id="g-score">1.0</span>
@@ -1123,6 +1134,12 @@ function showDimOverlay(d) {
 
 function hideOverlay() {
   document.getElementById('dim-overlay').classList.remove('on');
+  render();
+}
+
+function backFromOverlay() {
+  document.getElementById('dim-overlay').classList.remove('on');
+  qi--;
   render();
 }
 
