@@ -714,51 +714,51 @@
    VRAGEN
 ══════════════════════════════════════════ */
 const QS = [
-  // D1: Urgentiebesef & relevantie
-  { d:1, dName:"Urgentiebesef & relevantie",
-    dDesc:"Verandert AI de regels in jouw sector? En ben jij er klaar voor?",
-    text:"Als een concurrent morgen 30% efficiënter wordt door AI, hebben wij dan binnen 12 maanden een geloofwaardig antwoord?" },
-  { d:1, dName:"Urgentiebesef & relevantie",
-    dDesc:"Verandert AI de regels in jouw sector? En ben jij er klaar voor?",
-    text:"AI staat als strategische prioriteit op de agenda van onze directie, en dat is terug te zien in beslissingen over budget, tijd en mensen." },
-
-  // D2: Bereidheid tot beweging
-  { d:2, dName:"Bereidheid tot beweging",
-    dDesc:"Anders werken vraagt meer dan instemming. Is die bereidheid er echt?",
-    text:"Onze directie durft bestaande werkwijzen los te laten als AI een aantoonbaar beter alternatief biedt. Ook als dat weerstand oplevert." },
-  { d:2, dName:"Bereidheid tot beweging",
-    dDesc:"Anders werken vraagt meer dan instemming. Is die bereidheid er echt?",
-    text:"Wij maken tijd en budget vrij voor AI-initiatieven, ook als het rendement nog niet volledig vaststaat." },
-
-  // D3: Richting & eigenaarschap
-  { d:3, dName:"Richting & eigenaarschap",
+  // D1: Visie (was: Richting & eigenaarschap)
+  { d:1, dName:"Visie",
     dDesc:"Heeft de AI-ambitie een duidelijke koers, en iemand die dat bewaakt?",
     text:"Wij hebben een heldere visie op wat AI onze organisatie moet opleveren, en hebben de verantwoordelijkheid voor de uitvoering expliciet belegd." },
-  { d:3, dName:"Richting & eigenaarschap",
+  { d:1, dName:"Visie",
     dDesc:"Heeft de AI-ambitie een duidelijke koers, en iemand die dat bewaakt?",
     text:"Wij nemen nu besluiten over AI die pijn doen op korte termijn, maar noodzakelijk zijn voor onze positie over 3–5 jaar." },
 
-  // D4: Toepassing & uitvoerbaarheid
-  { d:4, dName:"Toepassing & uitvoerbaarheid",
-    dDesc:"Weten jullie waar AI het meeste oplevert? En gebeurt daar al iets?",
-    text:"Wij weten welke processen of taken het meest gebaat zijn bij AI, en handelen naar die prioritering." },
-  { d:4, dName:"Toepassing & uitvoerbaarheid",
-    dDesc:"Weten jullie waar AI het meeste oplevert? En gebeurt daar al iets?",
-    text:"AI wordt bij ons al structureel ingezet in dagelijkse werkprocessen, niet alleen als losstaand experiment." },
+  // D2: Urgentie (was: Urgentiebesef & relevantie)
+  { d:2, dName:"Urgentie",
+    dDesc:"Verandert AI de regels in jouw sector? En ben jij er klaar voor?",
+    text:"Als een concurrent morgen 30% efficiënter wordt door AI, hebben wij dan binnen 12 maanden een geloofwaardig antwoord?" },
+  { d:2, dName:"Urgentie",
+    dDesc:"Verandert AI de regels in jouw sector? En ben jij er klaar voor?",
+    text:"AI staat als strategische prioriteit op de agenda van onze directie, en dat is terug te zien in beslissingen over budget, tijd en mensen." },
 
-  // D5: Beheersing & randvoorwaarden
-  { d:5, dName:"Beheersing & randvoorwaarden",
+  // D3: Compliance (was: Beheersing & randvoorwaarden)
+  { d:3, dName:"Compliance",
     dDesc:"Staat de basis om AI verantwoord in te zetten? Zijn data, compliance en mensen op orde?",
     text:"Wij weten welke AI-toepassingen die wij gebruiken of overwegen vallen onder de EU AI Act, en wie binnen onze organisatie verantwoordelijk is voor compliance met de verplichtingen die daaruit volgen." },
-  { d:5, dName:"Beheersing & randvoorwaarden",
+  { d:3, dName:"Compliance",
     dDesc:"Staat de basis om AI verantwoord in te zetten? Zijn data, compliance en mensen op orde?",
     text:"Wij hebben een werkende procedure om te beoordelen of nieuwe AI-toepassingen voldoen aan geldende wet- en regelgeving op het gebied van privacy en eventuele sectorspecifieke normen." },
 
-  // D6: Opschaling & waardecreatie
-  { d:6, dName:"Opschaling & waardecreatie",
+  // D4: Actiebereidheid (was: Bereidheid tot beweging)
+  { d:4, dName:"Actiebereidheid",
+    dDesc:"Anders werken vraagt meer dan instemming. Is die bereidheid er echt?",
+    text:"Onze directie durft bestaande werkwijzen los te laten als AI een aantoonbaar beter alternatief biedt. Ook als dat weerstand oplevert." },
+  { d:4, dName:"Actiebereidheid",
+    dDesc:"Anders werken vraagt meer dan instemming. Is die bereidheid er echt?",
+    text:"Wij maken tijd en budget vrij voor AI-initiatieven, ook als het rendement nog niet volledig vaststaat." },
+
+  // D5: Executie (was: Toepassing & uitvoerbaarheid)
+  { d:5, dName:"Executie",
+    dDesc:"Weten jullie waar AI het meeste oplevert? En gebeurt daar al iets?",
+    text:"Wij weten welke processen of taken het meest gebaat zijn bij AI, en handelen naar die prioritering." },
+  { d:5, dName:"Executie",
+    dDesc:"Weten jullie waar AI het meeste oplevert? En gebeurt daar al iets?",
+    text:"AI wordt bij ons al structureel ingezet in dagelijkse werkprocessen, niet alleen als losstaand experiment." },
+
+  // D6: Opschaling (was: Opschaling & waardecreatie)
+  { d:6, dName:"Opschaling",
     dDesc:"Levert AI waarde, worden goede resultaten ook succesvol herhaald en opgeschaald?",
     text:"Wij meten de resultaten van AI-initiatieven aan de hand van vooraf vastgestelde indicatoren, en sturen bij als die uitblijven." },
-  { d:6, dName:"Opschaling & waardecreatie",
+  { d:6, dName:"Opschaling",
     dDesc:"Levert AI waarde, worden goede resultaten ook succesvol herhaald en opgeschaald?",
     text:"Wij hebben een aanpak om bewezen AI-toepassingen te herhalen en te schalen naar andere teams of processen, en die aanpak wordt effectief toegepast." },
 ];
@@ -772,21 +772,21 @@ const ANS = [
 ];
 
 const DIM_LABELS = [
-  "Urgentiebesef & relevantie",
-  "Bereidheid tot beweging",
-  "Richting & eigenaarschap",
-  "Toepassing & uitvoerbaarheid",
-  "Beheersing & randvoorwaarden",
-  "Opschaling & waardecreatie",
+  "Visie",
+  "Urgentie",
+  "Compliance",
+  "Actiebereidheid",
+  "Executie",
+  "Opschaling",
 ];
 
 const DIM_DESCS = [
   null,
-  "Verandert AI de regels in jouw sector? En ben jij er klaar voor?",
-  "Anders werken vraagt meer dan instemming. Is die bereidheid er echt?",
   "Heeft de AI-ambitie een duidelijke koers, en iemand die dat bewaakt?",
-  "Weten jullie waar AI het meeste oplevert? En gebeurt daar al iets?",
+  "Verandert AI de regels in jouw sector? En ben jij er klaar voor?",
   "Staat de basis om AI verantwoord in te zetten? Zijn data, compliance en mensen op orde?",
+  "Anders werken vraagt meer dan instemming. Is die bereidheid er echt?",
+  "Weten jullie waar AI het meeste oplevert? En gebeurt daar al iets?",
   "Levert AI waarde, worden goede resultaten ook succesvol herhaald en opgeschaald?",
 ];
 
