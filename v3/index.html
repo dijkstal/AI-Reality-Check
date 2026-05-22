@@ -497,7 +497,7 @@
       <div class="prof-item">
         <div class="prof-dot" style="background:var(--c1)"></div>
         <div>
-          <div class="prof-name">De Blinde Organisatie</div>
+          <div class="prof-name">De Onwetende Organisatie</div>
           <div class="prof-desc">AI staat niet op de agenda. Geen prioriteit, geen regie, wel risico.</div>
         </div>
       </div>
@@ -511,7 +511,7 @@
       <div class="prof-item">
         <div class="prof-dot" style="background:var(--c3)"></div>
         <div>
-          <div class="prof-name">De Verkennende Organisatie</div>
+          <div class="prof-name">De Aftastende Organisatie</div>
           <div class="prof-desc">Er is nieuwsgierigheid en ambitie, maar de fundering en richting ontbreken.</div>
         </div>
       </div>
@@ -620,9 +620,9 @@
         <span class="g-score-of">van de 5.0</span>
       </div>
       <div class="gauge-legend">
-        <div class="gl-item"><div class="gl-dot" style="background:var(--c1)"></div>Blind</div>
+        <div class="gl-item"><div class="gl-dot" style="background:var(--c1)"></div>Onwetend</div>
         <div class="gl-item"><div class="gl-dot" style="background:var(--c2)"></div>Zoekend</div>
-        <div class="gl-item"><div class="gl-dot" style="background:var(--c3)"></div>Verkennend</div>
+        <div class="gl-item"><div class="gl-dot" style="background:var(--c3)"></div>Aftastend</div>
         <div class="gl-item"><div class="gl-dot" style="background:var(--c4)"></div>Startklaar</div>
         <div class="gl-item"><div class="gl-dot" style="background:var(--c5)"></div>Versnellend</div>
       </div>
@@ -826,7 +826,7 @@ const DIM_DESCS = [
 ══════════════════════════════════════════ */
 const PROFILES = [
   {
-    id: 1, name: "De Blinde Organisatie", range: "1.0 tot 2.0",
+    id: 1, name: "De Onwetende Organisatie", range: "1.0 tot 2.0",
     color: "#DC2626",
     kernzin: "AI staat niet op de agenda. Geen prioriteit, geen regie, wel risico.",
     duiding: "In jouw organisatie geldt AI nog als iets voor later. Of voor grotere bedrijven. Voor als er meer budget is, meer tijd, meer duidelijkheid. Die redenering voelt verstandig. Dat is het niet. Afwachten is geen neutrale positie. Elke maand dat AI buiten de deur wordt gehouden, nemen concurrenten besluiten sneller, verwerken leveranciers data efficiënter en stellen klanten hogere verwachtingen. De lat verschuift, ook als jij stilstaat. AI is al relevant voor jouw organisatie, dus hoeveel achterstand kun je je permitteren?",
@@ -856,7 +856,7 @@ const PROFILES = [
     stap: "Als AI intern geen eigenaar heeft, dan krijgt het ook geen prioriteit. Schakel een externe partij in die dat proces samen met jullie opstart en versnelt, niet binnenkort, maar deze maand.",
   },
   {
-    id: 3, name: "De Verkennende Organisatie", range: "2.9 tot 3.5",
+    id: 3, name: "De Aftastende Organisatie", range: "2.9 tot 3.5",
     color: "#854D0E",
     kernzin: "Er is nieuwsgierigheid en ambitie, maar de fundering en richting ontbreken.",
     duiding: "In jouw organisatie is er overwegend enthousiasme over AI. De kansen worden gezien, tools worden uitgeprobeerd, medewerkers experimenteren. Maar de basis en een consistente aanpak ontbreken: verantwoordelijkheid is niet belegd. Regelgeving is nog onbekend terrein. Data en governance staan niet. Successen kunnen niet opschalen. Enthousiasme is de vonk. Structuur kan het daadwerkelijk laten branden.",
@@ -917,7 +917,7 @@ function f2(n) { return n.toFixed(2); }
 
 function buildGaugeSVG() {
   // Color stops at equal segment boundaries [1.0, 1.8, 2.6, 3.4, 4.2, 5.0]
-  // Blind=Red, Zoekend=Amber, Verkennend=Yellow, Startklaar=LightGreen, Versnellend=Green
+  // Onwetend=Red, Zoekend=Amber, Aftastend=Yellow, Startklaar=LightGreen, Versnellend=Green
   const COLOR_STOPS = [
     [1.0, [239, 68,  68]],   // #EF4444 Rood
     [1.8, [245, 158, 11]],   // #F59E0B Amber
@@ -1040,8 +1040,8 @@ function calcScore(ans) {
 
   // Threshold caps
   if (d[1] <= 2.0) pi = Math.min(pi, 1); // Urgentie laag: max Zoekend
-  if (d[0] <= 2.0) pi = Math.min(pi, 2); // Visie laag: max Verkennend
-  if (d[2] <= 2.0) pi = Math.min(pi, 2); // Compliance laag: max Verkennend
+  if (d[0] <= 2.0) pi = Math.min(pi, 2); // Visie laag: max Aftastend
+  if (d[2] <= 2.0) pi = Math.min(pi, 2); // Compliance laag: max Aftastend
 
   return { profile: PROFILES[pi], dims: d, total: tot };
 }
