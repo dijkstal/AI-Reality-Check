@@ -359,13 +359,13 @@
     /* Overview button */
     .btn-overview {
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--bg); color: var(--text);
-      border: 1px solid var(--line);
+      background: var(--white); color: var(--blue);
+      border: 2px solid var(--blue);
       padding: 14px 20px; border-radius: var(--r);
       font-size: 15px; font-weight: 700; cursor: pointer; transition: var(--ease); width: 100%;
       margin-bottom: 28px;
     }
-    .btn-overview:hover { background: var(--blue-light); border-color: var(--blue-border); color: var(--blue); }
+    .btn-overview:hover { background: var(--blue-light); }
 
     /* Share */
     .share-title { font-size: 14px; font-weight: 700; color: var(--muted); margin-bottom: 10px; text-align: center; }
@@ -702,6 +702,12 @@
       </div>
     </div>
 
+    <!-- Overzicht vragen en antwoorden — direct na gauge, altijd zichtbaar -->
+    <button class="btn-overview" onclick="showOverview()">
+      <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+      Overzicht vragen en antwoorden
+    </button>
+
     <div class="res-kernzin" id="res-kernzin"></div>
     <div class="res-duiding" id="res-duiding"></div>
 
@@ -724,12 +730,6 @@
       <div class="res-sec-lbl">Scores per dimensie</div>
       <div class="score-grid" id="score-grid"></div>
     </div>
-
-    <!-- Overzicht vragen en antwoorden -->
-    <button class="btn-overview" onclick="showOverview()">
-      <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
-      Overzicht vragen en antwoorden
-    </button>
 
     <div class="res-cta">
       <h3>Ontvang jouw resultaat als PDF</h3>
